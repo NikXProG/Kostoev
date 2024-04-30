@@ -1,0 +1,14 @@
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\obj\Debug\net8.0\BaseAlgorithmGraph.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\obj\Debug\net8.0\BaseAlgorithmGraph.AssemblyInfoInputs.cache
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\obj\Debug\net8.0\BaseAlgorithmGraph.AssemblyInfo.cs
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\obj\Debug\net8.0\BaseAlgorithmGraph.csproj.CoreCompileInputs.cache
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\bin\Debug\net8.0\BaseAlgorithmGraph.exe
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\bin\Debug\net8.0\BaseAlgorithmGraph.deps.json
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\bin\Debug\net8.0\BaseAlgorithmGraph.runtimeconfig.json
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\bin\Debug\net8.0\BaseAlgorithmGraph.dll
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\bin\Debug\net8.0\BaseAlgorithmGraph.pdb
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\obj\Debug\net8.0\BaseAlgorithmGraph.dll
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\obj\Debug\net8.0\refint\BaseAlgorithmGraph.dll
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\obj\Debug\net8.0\BaseAlgorithmGraph.pdb
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\obj\Debug\net8.0\BaseAlgorithmGraph.genruntimeconfig.cache
+C:\Users\tiger\OneDrive\Рабочий стол\пока прототип\BaseAlgorithmGraph\BaseAlgorithmGraph\obj\Debug\net8.0\ref\BaseAlgorithmGraph.dll

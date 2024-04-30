@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>histogram</title>
+	<link rel = "icon" href="./icon.png" type="image/png" sizes="16x16">
+	<link rel = "icon" href="./icon.png" type="image/png" sizes="32x32">
+	<link rel = "icon" href="./icon.png" type="image/png" sizes="64x64">
+	<link rel = "icon" href="./icon.png" type="image/png" sizes="96x96">	
+	<link rel = "icon" href="./icon.png" type="image/png" sizes="144x144">		
+	<style>
+		body{
+			margin:0;
+			padding:0;
+			display:flex;
+			flex-direction: column; 
+			justify-content: center;
+		}
+		canvas{
+			margin:20px;
+		}
+	</style>
+
+
+</head>
+<body>
+	<div style="lex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+		overflow: hidden;
+    display: flex;">
+		<div style="display:inline-block;">
+		<canvas id="myChart" width="500" height="300"></canvas>
+		<canvas id="myChart2" width="500" height="300"></canvas>
+		</div>
+		<div style="display:inline-block;">
+		<canvas id="myChart3" width="500" height="300"></canvas>
+		<canvas id="myChart4" width="500" height="300"></canvas>
+		</div>
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script>
+		  const ctx = document.getElementById('myChart');
+		  const ctx2 = document.getElementById('myChart2');
+		  const ctx3 = document.getElementById('myChart3');
+		  const ctx4 = document.getElementById('myChart4');
+		  new Chart(ctx,
+		    {
+		      type: 'bar',
+		      data: {
+		        labels: ['6.28', '7.24', '8.2', '9.16', '10.12'],
+		        datasets: [{
+		        label: 'ni/h',
+		        data: [7.29167, 11.4583, 6.25, 4.16667, 2.08333],
+		        backgroundColor: [
+		          'rgba(255, 26, 104, 0.2)',
+		          'rgba(54, 162, 235, 0.2)',
+		          'rgba(255, 206, 86, 0.2)',
+		          'rgba(75, 192, 192, 0.2)',
+		          'rgba(153, 102, 255, 0.2)',
+		        ],
+		        borderColor: [
+		          'rgba(255, 26, 104, 1)',
+		          'rgba(54, 162, 235, 1)',
+		          'rgba(255, 206, 86, 1)',
+		          'rgba(75, 192, 192, 1)',
+		          'rgba(153, 102, 255, 1)',
+		        ],
+		        borderWidth:1,
+		      	categoryPercentage:1.0,
+		      	barPercentage:1.0
+		      	}]
+		      }
+		  });
+		  new Chart(ctx2,
+		    {
+		      type: 'bar',
+		      data: {
+		        labels: ['6.28', '7.24', '8.2', '9.16', '10.12'],
+		        datasets: [{
+		        label: 'wi/h',
+		        data: [0.243056, 0.381944, 0.208333, 0.138889, 0.069444],
+		        backgroundColor: [
+		          'rgba(255, 26, 104, 0.2)',
+		          'rgba(54, 162, 235, 0.2)',
+		          'rgba(255, 206, 86, 0.2)',
+		          'rgba(75, 192, 192, 0.2)',
+		          'rgba(153, 102, 255, 0.2)',
+		        ],
+		        borderColor: [
+		          'rgba(255, 26, 104, 1)',
+		          'rgba(54, 162, 235, 1)',
+		          'rgba(255, 206, 86, 1)',
+		          'rgba(75, 192, 192, 1)',
+		          'rgba(153, 102, 255, 1)',
+		        ],
+		        borderWidth:1,
+		      	categoryPercentage:1.0,
+		      	barPercentage:1.0
+		      	}]
+		      }
+		  });
+		  new Chart(ctx3,
+		    {
+		      type: 'line',
+		      data: {
+		        labels: ['6.28', '7.24', '8.2', '9.16', '10.12'],
+		        datasets: [{
+		        label: 'ni',
+		        data: [7.0, 11.0, 6.0, 4.0, 2.0],
+		        backgroundColor: [
+		          'rgba(255, 26, 104, 0.2)',
+		          'rgba(54, 162, 235, 0.2)',
+		          'rgba(255, 206, 86, 0.2)',
+		          'rgba(75, 192, 192, 0.2)',
+		          'rgba(153, 102, 255, 0.2)',
+		        ],
+		        borderColor: [
+		          'rgba(255, 26, 104, 1)',
+		          'rgba(54, 162, 235, 1)',
+		          'rgba(255, 206, 86, 1)',
+		          'rgba(75, 192, 192, 1)',
+		          'rgba(153, 102, 255, 1)',
+		        ],
+		        borderWidth:1,
+		      	categoryPercentage:1.0,
+		      	barPercentage:1.0
+		      	}]
+		      }
+		  });
+		  new Chart(ctx4,
+		    {
+		      type: 'line',
+		      data: {
+		        labels: ['6.28', '7.24', '8.2', '9.16', '10.12'],
+		        datasets: [{
+		        label: 'wi',
+		        data: [0.233333, 0.366667, 0.2, 0.133333, 0.0666667],
+		        backgroundColor: [
+		          'rgba(255, 26, 104, 0.2)',
+		          'rgba(54, 162, 235, 0.2)',
+		          'rgba(255, 206, 86, 0.2)',
+		          'rgba(75, 192, 192, 0.2)',
+		          'rgba(153, 102, 255, 0.2)',
+		        ],
+		        borderColor: [
+		          'rgba(255, 26, 104, 1)',
+		          'rgba(54, 162, 235, 1)',
+		          'rgba(255, 206, 86, 1)',
+		          'rgba(75, 192, 192, 1)',
+		          'rgba(153, 102, 255, 1)',
+		        ],
+		        borderWidth:1,
+		      	categoryPercentage:1.0,
+		      	barPercentage:1.0
+		      	}]
+		      }
+		  });
+		  window.onresize = function () {
+			window.resizeTo(1250, 850);
+			}
+	</script>
+
+<script type="text/javascript" src="/eel.js" async> </script> 
+<script type="text/javascript" src="/eel.js"> </script>
+</body>
+</html>
