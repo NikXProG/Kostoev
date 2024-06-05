@@ -1,51 +1,44 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Runtime.CompilerServices;
+﻿using System;
+using System.Linq;
 
 namespace BaseAlgorithmGraph
 {
     public static class MatrixMethods
     {
-
         public class AdjacencyMatrix
         {
-            
             public readonly int CountVertex;
             public readonly int[,] Matrix;
-            
-            //constructors
+
             public AdjacencyMatrix() : this(3) { }
-            public AdjacencyMatrix(int countVertex)  
+            public AdjacencyMatrix(int countVertex)
             {
-                this.CountVertex = countVertex;
+                CountVertex = countVertex;
                 Matrix = new int[countVertex, countVertex];
             }
 
             public void CreateMatrix()
             {
-                // matrix indexing
-                for (int i = 0; i < this.CountVertex; i++)
+                for (int i = 0; i < CountVertex; i++)
                 {
-
-                    this.Matrix[i, i] = 0;
-                    for (int j = i + 1; j < this.CountVertex; j++)
+                    Matrix[i, i] = 0;
+                    for (int j = i + 1; j < CountVertex; j++)
                     {
                         Console.WriteLine($"distance between {i + 1} -> {j + 1}");
-
-                        this.Matrix[j, i] = this.Matrix[i, j] = Convert.ToInt32(Console.ReadLine());
+                        Matrix[i, j] = Matrix[j, i] = Convert.ToInt32(Console.ReadLine());
                     }
-
                 }
             }
+
             public void InfoMatrix()
             {
-                if (!this.IsEmpty())
+                if (!IsEmpty())
                 {
-                    // matrix output        
-                    Console.WriteLine("  " + string.Join(" ", Enumerable.Range(1, this.CountVertex)));
-                    for (int i = 0; i < this.CountVertex; i++)
+                    Console.WriteLine("  " + string.Join(" ", Enumerable.Range(1, CountVertex)));
+                    for (int i = 0; i < CountVertex; i++)
                     {
                         Console.Write(i + 1 + " ");
-                        for (int j = 0; j < this.CountVertex; j++) Console.Write(this.Matrix[j, i] + " ");
+                        for (int j = 0; j < CountVertex; j++) Console.Write(Matrix[j, i] + " ");
                         Console.WriteLine();
                     }
                 }
@@ -53,53 +46,36 @@ namespace BaseAlgorithmGraph
                 {
                     Console.WriteLine("Матрица пуста");
                 }
-
             }
+
             public bool IsEmpty()
             {
-                for (int i = 0; i < this.CountVertex; i++)
+                for (int i = 0; i < CountVertex; i++)
                 {
-                    for (int j = 0; j < this.CountVertex; j++)
+                    for (int j = 0; j < CountVertex; j++)
                     {
-                        if (this.Matrix[i, j] != 0)
+                        if (Matrix[i, j] != 0)
                         {
-                            return false; // Если найден ненулевой элемент, матрица не пуста
+                            return false;
                         }
                     }
                 }
-                return true; // Если не найдено ненулевых элементов, матрица пуста
-            }           
-
+                return true;
+            }
         }
 
         #region AlgorithmsBase
-        
         public static class DegreeSequenceReducer
         {
-            /*public static void ok()
-            {
-                int[] minSumVertex = new int[matrix.CountVertex];
-                
-                for (int i = 0; i < matrix.CountVertex; i++)
-                {
-                    int sum = 0;
-                    for (int j = 0; j < matrix.CountVertex; j++)
-                    {
-                        sum += matrix.Matrix[i, j];
-                    }
-                    minSumVertex[i] = sum;
-                }
-                Console.WriteLine(string.Join(" ", minSumVertex));
-            }*/
             public static AdjacencyMatrix Realize(int[] vectorDegreeVertex)
             {
-                if (vectorDegreeVertex.Sum() % 2 == 1) {return null;}
-                 /*Console.WriteLine("Редукционный алгоритм:");
-                 Console.WriteLine(string.Join(" ", vectorDegreeVertex));*/
-                 AdjacencyMatrix matrix = new AdjacencyMatrix(vectorDegreeVertex.Length);
+                if (vectorDegreeVertex.Sum() % 2 == 1) { return null; }
+                /*Console.WriteLine("Редукционный алгоритм:");
+                Console.WriteLine(string.Join(" ", vectorDegreeVertex));*/
+                AdjacencyMatrix matrix = new AdjacencyMatrix(vectorDegreeVertex.Length);
 
-                 while (vectorDegreeVertex.Sum() > 0)
-                 { 
+                while (vectorDegreeVertex.Sum() > 0)
+                {
                     int maxDegree = vectorDegreeVertex.Max();
                     int maxIndexDegree = Array.IndexOf(vectorDegreeVertex, maxDegree);
                     vectorDegreeVertex[maxIndexDegree] = 0;
@@ -112,211 +88,95 @@ namespace BaseAlgorithmGraph
                             matrix.Matrix[maxIndexDegree, j] = matrix.Matrix[j, maxIndexDegree] = 1;
                         }
                         // Console.Write($"{vectorDegreeVertex[j]} ");
-                        
+
                     }
-                    
-                    if (vectorDegreeVertex.Sum() % 2 == 1) {return null;}
+
+                    if (vectorDegreeVertex.Sum() % 2 == 1) { return null; }
                     // Console.WriteLine();
                 }
-                
+
                 return matrix;
 
 
             }
         }
-        public static class PruferCode
-        {
-            public static AdjacencyMatrix EncoderFromCode(string code)
-            {
-                char maxVertex = code.Max();
-                int[] pruferCodeArray = code.Select(c => int.Parse(c.ToString())).ToArray();
-                int countVertex = (maxVertex - '0') + code.Count(c => c == maxVertex) - 1;
-                AdjacencyMatrix matrix = new AdjacencyMatrix(countVertex);               
-                
-                int[] vertices = Enumerable.Range(1, countVertex).ToArray();
-                
-                while (pruferCodeArray.Length != 0)
-                {
-                    int u = pruferCodeArray[0];
-                    
-                    int minVertex = vertices.Except(pruferCodeArray).Min();
-                    
-                    matrix.Matrix[u-1, minVertex-1] = matrix.Matrix[minVertex-1,u-1] = 1;
-
-                    pruferCodeArray = pruferCodeArray.Skip(1).ToArray();
-                    
-                    var tmp = new List<int>(vertices); 
-                    tmp.RemoveAt(Array.IndexOf(vertices, minVertex)); 
-                    vertices = tmp.ToArray(); 
-            
-                }
-                return matrix;
-            }
-            public static string EncoderFromMatrix(AdjacencyMatrix matrix)
-            {
-                int[] pruferCodeArray = new int[matrix.CountVertex-1];
-                int index = 0;
-                int i;
-                for (i = 0; i < matrix.CountVertex-2; i++)
-                {                    
-
-                    int minHangingVertex = -1; 
-                    int indexHangingVertex = 10000;
-                    int minHanging = 10000;
-                    for (int j = 0; j < matrix.CountVertex; j++)
-                    {
-                        int sum = 0;
-
-                        for (int k = 0; k < matrix.CountVertex; k++)
-                        {
-                            sum+= matrix.Matrix[j,k]; 
-
-                        }
-
-                        if ((sum == 1) && i < minHanging)
-                        {
-                            minHanging = i;
-                            minHangingVertex = j;
-
-                        }
-                    }
-
-                    
-                    for (int j = 0; j < matrix.CountVertex; j++)
-                    {
-                        if (matrix.Matrix[minHangingVertex, j] == 1)
-                        {
-                            pruferCodeArray[i] = j+1;
-                            matrix.Matrix[minHangingVertex, j] = 0;
-                            matrix.Matrix[j, minHangingVertex] = 0;
-                        }
-                    }
-                    
-                    
-                    
-                }
-                for (int i_last = 0; i_last < matrix.CountVertex; i_last++)
-                {
-                    for (int j_last = 0; j_last < matrix.CountVertex; j_last++)
-                    {
-                        if (matrix.Matrix[i_last, j_last] == 1)
-                        {
-                            
-                            pruferCodeArray[i] = j_last+1;
-                            break;
-                        }
-                    }
-
-                    if (pruferCodeArray[i] != 0)
-                    {
-                        break;
-                    }
-                }
-
-
-
-                return string.Join("",pruferCodeArray.Where(d => d != 0));
-            }
-        }   
         public static class DijkstraAlgorithm
         {
-            public static int Realize(AdjacencyMatrix matrix, int startVertex, int endVertex)
+            public static void Realize(AdjacencyMatrix matrix, int startVertex, int endVertex)
             {
-                if (matrix.IsEmpty()) {Console.WriteLine("Матрица пуста"); return 1;}
-                
+                if (matrix.IsEmpty())
+                {
+                    Console.WriteLine("Матрица пуста");
+                    return;
+                }
+
                 int[] distances = new int[matrix.CountVertex];
-                int[] vertices = new int[matrix.CountVertex];
-                
-                for (int i = 0; i <matrix.CountVertex; i++)
+                bool[] visited = new bool[matrix.CountVertex];
+                int[] previous = new int[matrix.CountVertex];
+
+                // Инициализация массива расстояний
+                for (int i = 0; i < matrix.CountVertex; i++)
                 {
-                    distances[i] = 10000;
-                    vertices[i] = 1;
+                    distances[i] = int.MaxValue;
+                    visited[i] = false;
+                    previous[i] = -1;
                 }
 
-                distances[startVertex-1] = 0;
-                int minIndex, min, temp;
-                do
+                // Расстояние до начальной вершины равно 0
+                distances[startVertex - 1] = 0;
+
+                // Находим кратчайший путь для всех вершин
+                for (int count = 0; count < matrix.CountVertex - 1; count++)
                 {
-
-                    min = minIndex = 10000;
-                    for (int i = 0; i < matrix.CountVertex; i++)
+                    // Находим вершину с минимальным расстоянием
+                    int minDistance = int.MaxValue;
+                    int minIndex = -1;
+                    for (int v = 0; v < matrix.CountVertex; v++)
                     {
-                        if ((vertices[i] == 1) && (distances[i] < min))
+                        if (!visited[v] && distances[v] <= minDistance)
                         {
-                            min = distances[i];
-
-                            minIndex = i;
-
-
+                            minDistance = distances[v];
+                            minIndex = v;
                         }
-
                     }
 
-                    if (minIndex != 10000)
+                    // Помечаем выбранную вершину как посещенную
+                    visited[minIndex] = true;
+
+                    // Обновляем расстояния до смежных вершин
+                    for (int v = 0; v < matrix.CountVertex; v++)
                     {
-                        for (int i = 0; i < matrix.CountVertex; i++)
+                        if (!visited[v] && matrix.Matrix[minIndex, v] != 0 && distances[minIndex] != int.MaxValue &&
+                            distances[minIndex] + matrix.Matrix[minIndex, v] < distances[v])
                         {
-                            if (matrix.Matrix[minIndex, i] != 0)
-                            {
-
-                                temp = min + matrix.Matrix[minIndex, i];
-
-                                if (temp < distances[i])
-                                {
-
-                                    distances[i] = temp;
-                                }
-
-                            }
+                            distances[v] = distances[minIndex] + matrix.Matrix[minIndex, v];
+                            previous[v] = minIndex;
                         }
-
-                        vertices[minIndex] = 0;
                     }
-                } while (minIndex < 10000);
-
-                foreach (int i in distances)
-                {
-                    Console.Write(i + " ");
                 }
 
-                Console.WriteLine();
-                
-                #region path_restoration
-                
-                int[] ver = new int[matrix.CountVertex];
-
-                int endIndex = endVertex - 1;
-                ver[0] = endVertex;
-                int k = 1;
-                int weight = distances[endIndex];
-
-                while (endIndex != startVertex)
+                // Выводим кратчайшие расстояния до всех вершин
+                Console.WriteLine("Кратчайшие расстояния до всех вершин:");
+                for (int i = 0; i < matrix.CountVertex; i++)
                 {
-                    for (int i = 0; i < matrix.CountVertex; i++)
-                        if (matrix.Matrix[i, endIndex] != 0)
-                        {
-                            temp = weight - matrix.Matrix[i, endIndex];
-                            if (temp == distances[i])
-                            {
-                                weight = temp;
-                                endIndex = i;
-                                ver[k] = i + 1;
-                                k++;
-                            }
-                        }
+                    Console.WriteLine($"До вершины {i + 1}: {distances[i]}");
                 }
 
-                for (int i = k - 1; i >= 0; i--)
-                {
-                    Console.Write(" " + ver[i]);                   
-                }
-                Console.WriteLine();
-                #endregion
-                
-                return 0;
+                // Восстанавливаем путь от конечной вершины до начальной
+                Console.WriteLine("Кратчайший путь от конечной вершины до начальной:");
+                PrintPath(endVertex - 1, previous);
             }
-            
 
+            private static void PrintPath(int currentVertex, int[] previous)
+            {
+                if (currentVertex == -1)
+                {
+                    return;
+                }
+
+                PrintPath(previous[currentVertex], previous);
+                Console.Write($"{currentVertex + 1} ");
+            }
         }
         public static class FindGraphMetrics
         {
@@ -326,7 +186,7 @@ namespace BaseAlgorithmGraph
                 int r, d, e = 0;
                 for (int i = 0; i < matrix.CountVertex; i++)
                 {
-                    
+
                     for (int j = 0; j < matrix.CountVertex; j++)
                     {
                         if (matrix.Matrix[i, j] > e)
@@ -337,7 +197,7 @@ namespace BaseAlgorithmGraph
 
                     eArray[i] = e;
                 }
-                
+
                 Console.WriteLine($"Числовые характеристики графа:");
                 int index = 1;
                 foreach (var i in eArray)
@@ -348,36 +208,125 @@ namespace BaseAlgorithmGraph
                 Console.WriteLine($"r = {eArray.Min()}");
                 return 0;
             }
-                
         }
-       
+
+        public static class PruferCode
+        {
+            public static AdjacencyMatrix EncoderFromCode(string code)
+            {
+                int[] pruferCodeArray = code.Select(c => int.Parse(c.ToString())).ToArray();
+                int countVertex = pruferCodeArray.Length + 2;
+                AdjacencyMatrix matrix = new AdjacencyMatrix(countVertex);
+                int[] degree = new int[countVertex];
+
+                for (int i = 0; i < countVertex; i++) degree[i] = 1;
+                for (int i = 0; i < pruferCodeArray.Length; i++) degree[pruferCodeArray[i] - 1]++;
+
+                for (int i = 0; i < pruferCodeArray.Length; i++)
+                {
+                    for (int j = 0; j < countVertex; j++)
+                    {
+                        if (degree[j] == 1)
+                        {
+                            matrix.Matrix[j, pruferCodeArray[i] - 1] = matrix.Matrix[pruferCodeArray[i] - 1, j] = 1;
+                            degree[j]--;
+                            degree[pruferCodeArray[i] - 1]--;
+                            break;
+                        }
+                    }
+                }
+
+                int u = -1, v = -1;
+                for (int i = 0; i < countVertex; i++)
+                {
+                    if (degree[i] == 1)
+                    {
+                        if (u == -1) u = i;
+                        else v = i;
+                    }
+                }
+
+                matrix.Matrix[u, v] = matrix.Matrix[v, u] = 1;
+
+                return matrix;
+            }
+
+            public static string EncoderFromMatrix(AdjacencyMatrix matrix)
+            {
+                int[] degree = new int[matrix.CountVertex];
+                for (int i = 0; i < matrix.CountVertex; i++)
+                {
+                    for (int j = 0; j < matrix.CountVertex; j++)
+                    {
+                        if (matrix.Matrix[i, j] == 1)
+                        {
+                            degree[i]++;
+                        }
+                    }
+                }
+
+                int[] pruferCodeArray = new int[matrix.CountVertex - 2];
+                for (int k = 0; k < pruferCodeArray.Length; k++)
+                {
+                    for (int i = 0; i < matrix.CountVertex; i++)
+                    {
+                        if (degree[i] == 1)
+                        {
+                            for (int j = 0; j < matrix.CountVertex; j++)
+                            {
+                                if (matrix.Matrix[i, j] == 1)
+                                {
+                                    pruferCodeArray[k] = j + 1;
+                                    matrix.Matrix[i, j] = matrix.Matrix[j, i] = 0;
+                                    degree[i]--;
+                                    degree[j]--;
+                                    break;
+                                }
+                            }
+                            break;
+                        }
+                    }
+                }
+
+                return string.Join("", pruferCodeArray);
+            }
+        }
+
         #endregion
-        
+
         public static int Main()
         {
             try
             {
-                
-                const int countVertex = 3;
-                const int startVertex = 1;
-                const int endVertex = 2;                
-                
-                //AdjacencyMatrix adjacencyMatrix = new AdjacencyMatrix(6);
-                //adjacencyMatrix.CreateMatrix();
-                //adjacencyMatrix.InfoMatrix();  
+                AdjacencyMatrix adjacencyMatrix = new AdjacencyMatrix(4);
+                adjacencyMatrix.CreateMatrix();
+                Console.WriteLine();
+                adjacencyMatrix.InfoMatrix();
+                Console.WriteLine();
 
-                //DijkstraAlgorithm.Realize(adjacencyMatrix, 0, 3);
-                //FindGraphMetrics.Realize(adjacencyMatrix);
+                DijkstraAlgorithm.Realize(adjacencyMatrix, 1, 3);
+                Console.WriteLine();
+                Console.WriteLine();
+                FindGraphMetrics.Realize(adjacencyMatrix);
+                Console.WriteLine();
 
-                int[] vectorVertex = {5, 2, 3, 2, 1, 1};
-                //AdjacencyMatrix adjacencyMatrix = new AdjacencyMatrix(vectorVertex.Length);
-                //adjacencyMatrix = DegreeSequenceReducer.Realize(vectorVertex);
-                //adjacencyMatrix.InfoMatrix();
-                AdjacencyMatrix adjacencyMatrix = PruferCode.EncoderFromCode("234");
-                
-                Console.WriteLine(PruferCode.EncoderFromMatrix(adjacencyMatrix));
+                int[] vectorVertex = { 5, 2, 3, 2, 1, 1 };
 
-                
+                adjacencyMatrix = new AdjacencyMatrix(vectorVertex.Length);
+                adjacencyMatrix = DegreeSequenceReducer.Realize(vectorVertex);
+                adjacencyMatrix.InfoMatrix();
+                Console.WriteLine();
+
+                string code = "1123";
+                //string code = "234";
+                adjacencyMatrix = PruferCode.EncoderFromCode(code);
+                Console.WriteLine();
+                adjacencyMatrix.InfoMatrix();
+
+                string encoded = PruferCode.EncoderFromMatrix(adjacencyMatrix);
+                Console.WriteLine();
+                Console.WriteLine(encoded);
+
                 return 0;
             }
             catch (Exception e)
@@ -385,7 +334,6 @@ namespace BaseAlgorithmGraph
                 Console.WriteLine($"Processing failed: {e.Message}");
                 return 1;
             }
-            
         }
     }
 }

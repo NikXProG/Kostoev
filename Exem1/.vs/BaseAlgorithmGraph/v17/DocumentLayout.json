@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\tiger\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u043E\u043A\u0430 \u043F\u0440\u043E\u0442\u043E\u0442\u0438\u043F\\BaseAlgorithmGraph\\",
+  "WorkspaceRootPath": "C:\\Users\\tiger\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\KOSTOEV\\Exem1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F46A0B7B-C81E-4A73-A758-38B0513E6E21}|BaseAlgorithmGraph\\BaseAlgorithmGraph.csproj|c:\\users\\tiger\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u043E\u043A\u0430 \u043F\u0440\u043E\u0442\u043E\u0442\u0438\u043F\\basealgorithmgraph\\basealgorithmgraph\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F46A0B7B-C81E-4A73-A758-38B0513E6E21}|BaseAlgorithmGraph\\BaseAlgorithmGraph.csproj|c:\\users\\tiger\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\kostoev\\exem1\\basealgorithmgraph\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F46A0B7B-C81E-4A73-A758-38B0513E6E21}|BaseAlgorithmGraph\\BaseAlgorithmGraph.csproj|solutionrelative:basealgorithmgraph\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,14 +20,18 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\tiger\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u043E\u043A\u0430 \u043F\u0440\u043E\u0442\u043E\u0442\u0438\u043F\\BaseAlgorithmGraph\\BaseAlgorithmGraph\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\tiger\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\KOSTOEV\\Exem1\\BaseAlgorithmGraph\\Program.cs",
               "RelativeDocumentMoniker": "BaseAlgorithmGraph\\Program.cs",
-              "ToolTip": "C:\\Users\\tiger\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u043E\u043A\u0430 \u043F\u0440\u043E\u0442\u043E\u0442\u0438\u043F\\BaseAlgorithmGraph\\BaseAlgorithmGraph\\Program.cs*",
-              "RelativeToolTip": "BaseAlgorithmGraph\\Program.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIIBAAANAAAA",
+              "ToolTip": "C:\\Users\\tiger\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\KOSTOEV\\Exem1\\BaseAlgorithmGraph\\Program.cs",
+              "RelativeToolTip": "BaseAlgorithmGraph\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwBAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T21:12:00.978Z",
+              "WhenOpened": "2024-06-05T15:44:16.652Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }

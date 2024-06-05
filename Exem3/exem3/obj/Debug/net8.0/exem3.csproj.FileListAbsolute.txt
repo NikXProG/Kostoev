@@ -1,0 +1,15 @@
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\bin\Debug\net8.0\exem3.exe
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\bin\Debug\net8.0\exem3.deps.json
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\bin\Debug\net8.0\exem3.runtimeconfig.json
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\bin\Debug\net8.0\exem3.dll
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\bin\Debug\net8.0\exem3.pdb
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\obj\Debug\net8.0\exem3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\obj\Debug\net8.0\exem3.AssemblyInfoInputs.cache
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\obj\Debug\net8.0\exem3.AssemblyInfo.cs
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\obj\Debug\net8.0\exem3.csproj.CoreCompileInputs.cache
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\obj\Debug\net8.0\exem3.sourcelink.json
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\obj\Debug\net8.0\exem3.dll
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\obj\Debug\net8.0\refint\exem3.dll
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\obj\Debug\net8.0\exem3.pdb
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\obj\Debug\net8.0\exem3.genruntimeconfig.cache
+C:\Users\tiger\OneDrive\Рабочий стол\KOSTOEV\Exem3\exem3\obj\Debug\net8.0\ref\exem3.dll

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tiger\\OneDrive\\Рабочий стол\\пока прототип\\BaseAlgorithmGraph\\BaseAlgorithmGraph\\BaseAlgorithmGraph.csproj": {}
+    "C:\\Users\\tiger\\OneDrive\\Рабочий стол\\KOSTOEV\\Exem1\\BaseAlgorithmGraph\\BaseAlgorithmGraph.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tiger\\OneDrive\\Рабочий стол\\пока прототип\\BaseAlgorithmGraph\\BaseAlgorithmGraph\\BaseAlgorithmGraph.csproj": {
+    "C:\\Users\\tiger\\OneDrive\\Рабочий стол\\KOSTOEV\\Exem1\\BaseAlgorithmGraph\\BaseAlgorithmGraph.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tiger\\OneDrive\\Рабочий стол\\пока прототип\\BaseAlgorithmGraph\\BaseAlgorithmGraph\\BaseAlgorithmGraph.csproj",
+        "projectUniqueName": "C:\\Users\\tiger\\OneDrive\\Рабочий стол\\KOSTOEV\\Exem1\\BaseAlgorithmGraph\\BaseAlgorithmGraph.csproj",
         "projectName": "BaseAlgorithmGraph",
-        "projectPath": "C:\\Users\\tiger\\OneDrive\\Рабочий стол\\пока прототип\\BaseAlgorithmGraph\\BaseAlgorithmGraph\\BaseAlgorithmGraph.csproj",
+        "projectPath": "C:\\Users\\tiger\\OneDrive\\Рабочий стол\\KOSTOEV\\Exem1\\BaseAlgorithmGraph\\BaseAlgorithmGraph.csproj",
         "packagesPath": "C:\\Users\\tiger\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tiger\\OneDrive\\Рабочий стол\\пока прототип\\BaseAlgorithmGraph\\BaseAlgorithmGraph\\obj\\",
+        "outputPath": "C:\\Users\\tiger\\OneDrive\\Рабочий стол\\KOSTOEV\\Exem1\\BaseAlgorithmGraph\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
