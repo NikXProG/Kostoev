@@ -5,6 +5,10 @@
 #include <algorithm>
 #include <cmath>
 
+// вызов файла python сделан через system: в mac не работает. 
+// Либо делать свой интерфейс отн. частот или запускать вручную, либо юзай на винде 
+// Некоторые библиотечки придется установить 
+
 using namespace std;
 
 void output_interval_series(const string&, vector<double>&);
